@@ -8,4 +8,15 @@ class Api::MeetupsController < ApplicationController
   def show
     render 'show.json.jbuilder'
   end
+
+  def create
+    @meetup = Meetup.new(
+                            name: params[:name],
+                            start_name: params[:start_name],
+                            end_time: params[:end_time]
+
+                          )
+    @meetup.save
+    render 'show.json.jbuilder'
+  end
 end
