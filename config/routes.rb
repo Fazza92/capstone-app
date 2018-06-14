@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/meetups' => 'meetups#index'
   get '/meetups/:id' => 'meetups#show'
   post '/meetups' => 'meetups#create'
+  patch '/meetups/:id' => 'meetups#update'
+  delete '/meetups/:id' => 'meetups#destroy'
 
   # get '/events' => 'events#index'
   # get '/events/:id' => 'events#show'
