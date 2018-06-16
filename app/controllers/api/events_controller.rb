@@ -49,4 +49,4 @@ class Api::EventsController < ApplicationController
     @event.destroy
     render json: {message: "Event successfully destroyed"}
   end
-end
+

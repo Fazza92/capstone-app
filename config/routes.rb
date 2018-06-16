@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   patch '/events/:id' => 'events#update' 
   delete '/events/:id' => 'events#destroy'
 
+  get '/locations' => 'locations#index'
+  get '/locations/:id' => 'locations#show'
+  post '/locations' => 'locations#create'
+  patch '/locations/:id' => 'locations#update'
+  delete '/locations/:id' => 'locations#destroy'
+
   end
 end
