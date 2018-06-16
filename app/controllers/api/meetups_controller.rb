@@ -36,10 +36,11 @@ class Api::MeetupsController < ApplicationController
     @meetup.start_name = params[:start_name] || @meetup.start_name
     @meetup.end_time = params[:end_time] || @meetup.end_time
 
-    @product.save
-
-    render 'show.json.jbuilder'
-    
+    if @meetup.save
+      render 'show.json.jbuilder'
+    else
+      render json: {errors: @meetups.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy

@@ -6,7 +6,11 @@ class Api::UsersController < ApplicationController
                         password: params[:password],
                         password_confirmation[:password_confirmation]
                       )
-    @user.save
-    render 'show.json.jbuilder'
+
+    if @user.save
+      render 'show.json.jbuilder'
+    else
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 end
