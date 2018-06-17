@@ -1,6 +1,6 @@
 class Api::LocationsController < ApplicationController
   def index
-    @events = Event.all
+    @locations = Location.all
 
     render 'index.json.jbuilder'
   end
@@ -23,9 +23,9 @@ class Api::LocationsController < ApplicationController
       else
         render json: {errors: @location.errors.full_messages}, status: :unprocessable_entity
       end
-    else
-      render json: {}, status: :unauthorized
-    end
+    # else
+    #   render json: {}, status: :unauthorized
+  end
 
     def update
     created_location_id = params[:id]
@@ -48,4 +48,5 @@ class Api::LocationsController < ApplicationController
     @location.destroy
     render json: {message: "Location successfully destroyed"}
   end
+end
 

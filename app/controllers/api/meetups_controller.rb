@@ -6,13 +6,8 @@ class Api::MeetupsController < ApplicationController
   end
 
   def show
-    created_meetup_id = params[:id]
-    @meetup = Meetup.find(created_meetup_id)
-    # puts "******************************"
-    # puts "******************************"
-    # p @meetup
-    # puts "******************************"
-    # puts "******************************"
+    meetup_id = params[:id]
+    @meetup = Meetup.find(meetup_id)
     render 'show.json.jbuilder'
   end
 
@@ -20,8 +15,9 @@ class Api::MeetupsController < ApplicationController
     @meetup = Meetup.new(
                             meetup_id: params[:meetup_id],
                             name: params[:name],
-                            start_name: params[:start_name],
-                            end_time: params[:end_time]
+                            start_time: params[:start_time],
+                            end_time: params[:end_time],
+                            description: params[:description]
 
                           )
     @meetup.save
@@ -33,8 +29,9 @@ class Api::MeetupsController < ApplicationController
     @meetup = Meetup.find(created_meetup_id)
 
     @meetup.name = params[:name] || @meetup.name
-    @meetup.start_name = params[:start_name] || @meetup.start_name
+    @meetup.start_time = params[:start_time] || @meetup.start_time
     @meetup.end_time = params[:end_time] || @meetup.end_time
+    @meetup.description = params[:description] || @meetup.description
 
     if @meetup.save
       render 'show.json.jbuilder'

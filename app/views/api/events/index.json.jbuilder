@@ -1,4 +1,1 @@
-json.id @events
-json.name @events
-json.location @events
-json.description @events
+json.array! @events, partial: "event", as: :event
