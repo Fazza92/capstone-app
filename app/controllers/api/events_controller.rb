@@ -6,8 +6,8 @@ class Api::EventsController < ApplicationController
   end
 
   def show
-    created_event_id = params[:id]
-    @event = Event.find(created_event_id)
+    event_id = params[:id]
+    @event = Event.find(event_id)
     render 'show.json.jbuilder'
   end
 
@@ -29,8 +29,8 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    created_event_id = params[:id]
-    @event = Event.find(created_event_id)
+    event_id = params[:id]
+    @event = Event.find(event_id)
 
     @event.name = params[:name] || @event.name
     @event.location = params[:location] || @event.location
@@ -44,8 +44,8 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    created_event_id = params[:id]
-    @event = Event.find(created_event_id)
+    event_id = params[:id]
+    @event = Event.find(event_id)
     @event.destroy
     render json: {message: "Event successfully destroyed"}
   end

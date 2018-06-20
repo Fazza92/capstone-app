@@ -1,5 +1,4 @@
 class UserTokenController < Knock::AuthTokenController
-  class UserTokenController < Knock::AuthTokenController
   protect_from_forgery with: :null_session
   def create
     email = request.params["auth"] && request.params["auth"]["email"]
@@ -12,4 +11,3 @@ class UserTokenController < Knock::AuthTokenController
   end
 end
 
-end

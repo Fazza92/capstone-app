@@ -28,8 +28,8 @@ class Api::LocationsController < ApplicationController
   end
 
     def update
-    created_location_id = params[:id]
-    @location = Location.find(created_location_id)
+    location_id = params[:id]
+    @location = Location.find(location_id)
 
     @location.name = params[:name] || @location.name
     @location.longitude = params[:longitude] || @location.longitude

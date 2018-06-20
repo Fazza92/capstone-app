@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  post 'user_token' => 'user_token#create'
+  post '/user_token' => 'user_token#create'
+ namespace :api do
   post '/users' => 'users#create'
 
- namespace :api do
   get '/meetups' => 'meetups#index'
   get '/meetups/:id' => 'meetups#show'
   post '/meetups' => 'meetups#create'
