@@ -23,9 +23,7 @@ class Api::EventsController < ApplicationController
       else
         render json: {errors: @event.errors.full_messages}, status: :unprocessable_entity
       end
-    else
-      render json: {}, status: :unauthorized
-    end
+    
   end
 
   def update
@@ -49,4 +47,4 @@ class Api::EventsController < ApplicationController
     @event.destroy
     render json: {message: "Event successfully destroyed"}
   end
-
+end

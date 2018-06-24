@@ -30,7 +30,7 @@ class Api::LocationsController < ApplicationController
     def update
     location_id = params[:id]
     @location = Location.find(location_id)
-
+    
     @location.name = params[:name] || @location.name
     @location.longitude = params[:longitude] || @location.longitude
     @location.latitude = params[:latitude] || @location.latitude

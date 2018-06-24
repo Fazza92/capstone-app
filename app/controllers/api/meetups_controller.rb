@@ -24,26 +24,27 @@ class Api::MeetupsController < ApplicationController
     render 'show.json.jbuilder'
   end
 
-  def update
-    created_meetup_id = params[:id]
-    @meetup = Meetup.find(created_meetup_id)
+    def update
+      meetup_id = params[:id]
+      @meetup = Meetup.find(meetup_id)
+      
+      @meetup.name = params[:name] || @meetup.name
+      @meetup.start_time = params[:start_time] || @meetup.start_time
+      @meetup.end_time = params[:end_time] || @meetup.end_time
+      @meetup.description = params[:description] || @meetup.description
+      
+      if @meetup.save
+        render 'show.json.jbuilder'
+      else
+        render json: {errors: @meetup.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
 
-    @meetup.name = params[:name] || @meetup.name
-    @meetup.start_time = params[:start_time] || @meetup.start_time
-    @meetup.end_time = params[:end_time] || @meetup.end_time
-    @meetup.description = params[:description] || @meetup.description
-
-    if @meetup.save
-      render 'show.json.jbuilder'
-    else
-      render json: {errors: @meetups.errors.full_messages }, status: :unprocessable_entity
+    def destroy
+      meetup_id = params[:id]
+      @meetup = Location.find(meetup_id)
+      @meetup.destroy
+      render json: {message: "Meetup successfully destroyed"}
     end
   end
 
-  def destroy
-    created_meetup_id = params[:id]
-    @meetup = Meetup.find(created_meetup_id)
-    @meetup.destroy
-    render json: {message: "Meetup has been deleted"}
-  end
-end
