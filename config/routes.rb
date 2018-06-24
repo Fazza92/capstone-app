@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   patch '/locations/:id' => 'locations#update'
   delete '/locations/:id' => 'locations#destroy'
 
+
+  get '/attendances' => 'attendances#index'
+  post '/attendances' => 'attendances#create'
+  delete '/attendances/:id' => 'attendances#destroy'
   end
 end

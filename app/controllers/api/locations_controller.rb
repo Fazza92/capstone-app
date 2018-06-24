@@ -6,8 +6,8 @@ class Api::LocationsController < ApplicationController
   end
 
   def show
-    created_location_id = params[:id]
-    @location = Location.find(created_location_id)
+    location_id = params[:id]
+    @location = Location.find(location_id)
     render 'show.json.jbuilder'
   end
 
@@ -43,8 +43,8 @@ class Api::LocationsController < ApplicationController
   end
 
   def destroy
-    created_location_id = params[:id]
-    @location = Location.find(created_location_id)
+    location_id = params[:id]
+    @location = Location.find(location_id)
     @location.destroy
     render json: {message: "Location successfully destroyed"}
   end
