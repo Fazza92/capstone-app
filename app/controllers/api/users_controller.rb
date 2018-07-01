@@ -13,4 +13,11 @@ class Api::UsersController < ApplicationController
       render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
   end
+
+  def show
+    user_id = params[:id]
+    @user = User.find(user_id)
+    render 'show.json.jbuilder'
+  end
+
 end

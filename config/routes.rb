@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   post '/user_token' => 'user_token#create'
  namespace :api do
   post '/users' => 'users#create'
+  get '/users/:id' => 'users#show'
 
   get '/meetups' => 'meetups#index'
   get '/meetups/:id' => 'meetups#show'

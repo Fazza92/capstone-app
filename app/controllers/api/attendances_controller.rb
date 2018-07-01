@@ -8,7 +8,7 @@ class Api::AttendancesController < ApplicationController
     @attendance = Attendance.new(
                                   user_id: current_user.id,
                                   meetup_id: params[:meetup_id],
-                                  status: "Going to attend"
+                                  status: "Attending"
                                 )
   end
 
