@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Stars</title>
     <!--plugins-->
-
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="index.js" defer></script>
     <link href="assets/css/plugins/plugins.css" rel="stylesheet">
     <!--Custom css-->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="preloader">
-        <div id="preloader-inner"></div>
-    </div><!--/preloader-->
+        <div id="preloader">
+            <div id="preloader-inner"></div>
+        </div><!--/preloader-->
     <header class="header header-sticky header-transparent header-light">
         <div class="top-bar navbar">
             <div class="container">
                 <ul class="navbar-nav flex-row nav ml-auto">
                     <li class="nav-item"><a href="signup.html" class="nav-link">Create an account?</a></li>
                     <li class="nav-item">
-                        <a href="login.html" class="nav-link"><i class="ion-android-lock mr-2"></i> Login</a></li>
+                        <a href="/#/login" class="nav-link"><i class="ion-android-lock mr-2"></i> Login</a></li>
 
                     </ul>
                 </div><!--container end-->
@@ -68,54 +71,9 @@
                             <!--mega menu-->
                             <li class="dropdown dropdown-fw nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">More  <i class="fa fa-angle-down"></i></a>
-<!--                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="yamm-content">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <h3 class="heading">Pages 1</h3>
-                                                    <ul class="mega-vertical-nav list-unstyled">  
-                                                        <li><a class="dropdown-item" href="about.html">About</a></li>
-                                                        <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                                                        <li><a class="dropdown-item" href="services.html">FAQ</a></li>
-                                                    </ul>
-
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <h3 class="heading">Pages 2 </h3>
-                                                    <ul class="mega-vertical-nav list-unstyled">
-                                                        <li><a class="dropdown-item" href="page-fullwidth.html">Full Width</a></li>
-                                                        <li><a class="dropdown-item" href="page-leftbar.html">Left Sidebar</a></li>
-                                                        <li><a class="dropdown-item" href="page-rightbar.html">Right Sidebar</a></li>
-                                                        <li><a class="dropdown-item" href="faqs.html">Faqs</a></li>
-                                                        <li><a class="dropdown-item" href="page-error.html">Error 404</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <h3 class="heading">Features</h3>
-                                                    <ul class="mega-vertical-nav list-unstyled">
-                                                        <li><a class="dropdown-item" href="typography.html">Typography</a></li>
-                                                        <li><a class="dropdown-item" href="shortcodes.html">Shortcodes</a></li>                              
-                                                        <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
-                                                        <li><a class="dropdown-item" href="footer-option.html">Footer option</a></li><li><a class="dropdown-item" href="gallery-lightbox.html">Lightbox-gallery</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-2">
-                                                    <img src="assets/img/ipad.png" alt="" class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul> -->
                             </li> 
                             <li class=" dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Shop</a>
-<!--                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="shop-default.html">Shop 3 columns</a></li><li><a href="shop-sidebar.html" class="dropdown-item">Shop Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="product-detail.html">Product Detail</a></li>                              
-                                    <li><a class="dropdown-item" href="shop-cart.html">Cart</a></li>
-                                    <li><a class="dropdown-item" href="shop-checkout.html">Checkout</a></li>
-                                </ul> -->
                             </li>
                         </ul>
                     </div>
@@ -192,6 +150,14 @@
                 </div>
             </div><!--row-->
 
+    <!-- YIELD -->
+            <div id="vue-app">
+                <router-view></router-view>
+            </div>
+
+    <!-- YIELD END -->
+
+
             <div class="row">
                 <div class="col-md-4 col-sm-6 margin-btm-40">
                     <div class="portfolio-sec">
@@ -206,81 +172,21 @@
                             <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
                         </div>
                     </div>
-                </div><!--portfolio item -->
-                <div class="col-md-4 col-sm-6 margin-btm-40">
-                    <div class="portfolio-sec">
-                        <div class="portfolio-thumnail">
-                            <a href="portfolio-single.html">
-                                <img src="assets/img/work/work-2.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="portfolio-desc text-center">
-                            <h4 class="portfolio-post-title">portfolio item title here</h4>
-                            <span class="portfolio-post-cat">Branding</span>
-                            <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
-                        </div>
-                    </div>
-                </div><!--portfolio item -->
-                <div class="col-md-4 col-sm-6 margin-btm-40">
-                    <div class="portfolio-sec">
-                        <div class="portfolio-thumnail">
-                            <a href="portfolio-single.html">
-                                <img src="assets/img/work/work-3.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="portfolio-desc text-center">
-                            <h4 class="portfolio-post-title">portfolio item title here</h4>
-                            <span class="portfolio-post-cat">Branding</span>
-                            <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
-                        </div>
-                    </div>
-                </div><!--portfolio item -->
+                </div>
 
-
-                <div class="col-md-4 col-sm-6 margin-btm-40">
-                    <div class="portfolio-sec">
-                        <div class="portfolio-thumnail">
-                            <a href="portfolio-single.html">
-                                <img src="assets/img/work/work-4.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="portfolio-desc text-center">
-                            <h4 class="portfolio-post-title">portfolio item title here</h4>
-                            <span class="portfolio-post-cat">Branding</span>
-                            <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
-                        </div>
-                    </div>
-                </div><!--portfolio item -->
-<!--                 <div class="col-md-4 col-sm-6 margin-btm-40">
-                    <div class="portfolio-sec">
-                        <div class="portfolio-thumnail">
-                            <a href="portfolio-single.html">
-                                <img src="assets/img/work/work-5.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="portfolio-desc text-center">
-                            <h4 class="portfolio-post-title">portfolio item title here</h4>
-                            <span class="portfolio-post-cat">Branding</span>
-                            <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
-                        </div>
-                    </div>
-                </div> --><!--portfolio item -->
-                <!-- <div class="col-md-4 col-sm-6 margin-btm-40">
-                    <div class="portfolio-sec">
-                        <div class="portfolio-thumnail">
-                            <a href="portfolio-single.html">
-                                <img src="assets/img/work/work-6.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="portfolio-desc text-center">
-                            <h4 class="portfolio-post-title">portfolio item title here</h4>
-                            <span class="portfolio-post-cat">Branding</span>
-                            <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
-                        </div>
-                    </div>
-                </div> --><!--portfolio item -->
+                <h4> HI!</h4>
             </div><!--row portfolio item-->
+        
+
+
         </div><!--recent work container end-->
+        
+
+
+
+
+
+
         <div class="space-70"></div>
     <!--features end-->
         <section id="content-region-2" class="slider-testimonials ">
@@ -323,6 +229,7 @@
         
         <!--footer-->
         <div id="footer">
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 margin-btm-20">
@@ -399,9 +306,125 @@
         <!--back to top-->
         <a href="#" class="scrollToTop"><i class="ion-android-arrow-dropup-circle"></i></a>
         <!--back to top end-->
-
+    </div>
         <!-- jQuery plugins. -->
         <script src="assets/js/plugins/plugins.js"></script>
         <script src="assets/js/app.js"></script>
     </body>
     </html>
+
+            <template id="login-page">
+              <div class="vue-component">
+
+                <div class="container">
+                  <h1>Login</h1>
+                  <ul>
+                    <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                  </ul>
+                  <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" v-model="email">
+                  </div>
+                  <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" class="form-control" v-model="password">
+                  </div>
+                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                </div>
+
+              </div>
+            </template>
+
+
+<template id="home-page">
+    <div class="vue-component">
+
+    <h1>{{ message }}</h1>
+
+    </div>
+</template>
+
+<template id="signup-page">
+  <div class="vue-component">
+
+    <div class="container">
+      <h1>Signup</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-group">
+        <label>Name:</label> 
+        <input type="text" class="form-control" v-model="name">
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" v-model="email">
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" v-model="password">
+      </div>
+      <div class="form-group">
+        <label>Password confirmation:</label>
+        <input type="password" class="form-control" v-model="passwordConfirmation">
+      </div>
+      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+    </div>
+
+  </div>
+</template>
+
+<template id="meetups-index-page">
+  <div class="vue-component">
+
+    <div class="container">
+        <div v-for="meetup in meetups">
+            <h3>{{ meetup["name"]}}</h3>
+        </div>
+    </div>
+
+  </div>
+</template>
+
+<template id="meetups-show-page">
+  <div class="vue-component">
+
+    <div class="container">
+        <h2>{{ meetup["name"]}}</h2>
+        <h2>{{ meetup["description"]}}</h2>
+
+    </div>
+
+  </div>
+</template>
+
+<template id="meetups-new-page">
+  <div class="vue-component">
+
+    <div class="container">
+      <h1>New Meetup</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-group">
+        <label>Name:</label> 
+        <input type="text" class="form-control" v-model="title">
+      </div>
+      <div class="form-group">
+        <label>Start Time:</label>
+        <input type="text" class="form-control" v-model="ingredients">
+      </div>
+      <div class="form-group">
+        <label>End Time:</label>
+        <input type="text" class="form-control" v-model="directions">
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <input type="text" class="form-control" v-model="prepTime">
+      </div>
+      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+    </div>
+
+  </div>
+</template>
+    
