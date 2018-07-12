@@ -40,27 +40,6 @@
                         <ul class="nav navbar-nav ml-auto">
                             <li class="active dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Home</a> 
-                                <ul class="dropdown-menu">
-                                    <!-- <li><a href="index.html" class="dropdown-item">Home - Default</a></li>
-                                    <li><a href="home-master.html" class="dropdown-item">Home - Master Slider</a></li>
-                                    <li><a href="home-animation.html" class="dropdown-item">Home - Animations</a></li>
-                                    <li><a href="home-carousel.html" class="dropdown-item">Home Carousel</a></li>
-                                    <li><a href="home-boxed.html" class="dropdown-item">Home boxed</a></li>
-                                    <li><a href="home-onepage.html" class="dropdown-item">One Page</a></li> -->
-                                    <!-- <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#"  class="dropdown-item">Multi level menu </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#" class="dropdown-item"> menu level 2</a></li>
-                                            <li class="dropdown-submenu">
-                                                <a tabindex="-1" href="#" class="dropdown-item">menu level 2 </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#" class="dropdown-item"> menu level 3</a></li>
-                                                    <li><a href="#" class="dropdown-item"> menu level 3</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li> -->
-                                </ul>
                             </li>
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Calender</a>
@@ -174,7 +153,6 @@
                     </div>
                 </div>
 
-                <h4> HI!</h4>
             </div><!--row portfolio item-->
         
 
@@ -307,6 +285,10 @@
         <a href="#" class="scrollToTop"><i class="ion-android-arrow-dropup-circle"></i></a>
         <!--back to top end-->
     </div>
+
+
+
+
         <!-- jQuery plugins. -->
         <script src="assets/js/plugins/plugins.js"></script>
         <script src="assets/js/app.js"></script>
@@ -336,95 +318,235 @@
             </template>
 
 
-<template id="home-page">
-    <div class="vue-component">
+            <template id="signup-page">
+              <div class="vue-component">
 
-    <h1>{{ message }}</h1>
+                <div class="container">
+                  <h1>Signup</h1>
+                  <ul>
+                    <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                  </ul>
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="name">
+                  </div>
+                  <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" v-model="email">
+                  </div>
+                  <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" class="form-control" v-model="password">
+                  </div>
+                  <div class="form-group">
+                    <label>Password confirmation:</label>
+                    <input type="password" class="form-control" v-model="passwordConfirmation">
+                  </div>
+                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                </div>
 
-    </div>
-</template>
+              </div>
+            </template>
 
-<template id="signup-page">
-  <div class="vue-component">
+            <template id="meetups-index-page">
+              <div class="vue-component">
 
-    <div class="container">
-      <h1>Signup</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="name">
-      </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
+                <div class="container">
+                    <div v-for="meetup in meetups">
+                        <h3>{{ meetup["name"]}}</h3>
+                    </div>
+                </div>
 
-  </div>
-</template>
+              </div>
+            </template>
 
-<template id="meetups-index-page">
-  <div class="vue-component">
+            <template id="meetups-show-page">
+              <div class="vue-component">
 
-    <div class="container">
-        <div v-for="meetup in meetups">
-            <h3>{{ meetup["name"]}}</h3>
-        </div>
-    </div>
+                <div class="container">
+                    <h2>{{ meetup["name"]}}</h2>
+                    <h2>{{ meetup["start_time"]}}</h2>
+                    <h2>{{ meetup["end_time"]}}</h2>
+                    <h2>{{ meetup["description"]}}</h2>
+                </div>
 
-  </div>
-</template>
+              </div>
+            </template>
 
-<template id="meetups-show-page">
-  <div class="vue-component">
+            <template id="meetups-new-page">
+              <div class="vue-component">
 
-    <div class="container">
-        <h2>{{ meetup["name"]}}</h2>
-        <h2>{{ meetup["description"]}}</h2>
+                <div class="container">
+                  <h1>New Meetup</h1>
+                  <!-- <ul>
+                    <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                  </ul> -->
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="name">
+                  </div>
+                  <div class="form-group">
+                    <label>Start Time:</label>
+                    <input type="text" class="form-control" v-model="start_time">
+                  </div>
+                  <div class="form-group">
+                    <label>End Time:</label>
+                    <input type="text" class="form-control" v-model="end_time">
+                  </div>
+                  <div class="form-group">
+                    <label>Description:</label>
+                    <input type="text" class="form-control" v-model="description">
+                  </div>
+                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                </div>
 
-    </div>
+              </div>
+            </template>
 
-  </div>
-</template>
+            <template id="meetups-edit-page">
+              <div class="vue-component">
 
-<template id="meetups-new-page">
-  <div class="vue-component">
+                <div class="container">
+                    <h3 v-bind:="/client/meetups/ @event['id']/edit"></h3>
+                    <button v-on="click: editMeetup(this)">
+                         Edit
+                    </button>
+                    <!-- <input v-on:keyup.delete="submit">
+                    <a v-bind:href="/client/meetups/{{meetup['id']/delete}}">Delete</a> -->
+                </div>
 
-    <div class="container">
-      <h1>New Meetup</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="title">
-      </div>
-      <div class="form-group">
-        <label>Start Time:</label>
-        <input type="text" class="form-control" v-model="ingredients">
-      </div>
-      <div class="form-group">
-        <label>End Time:</label>
-        <input type="text" class="form-control" v-model="directions">
-      </div>
-      <div class="form-group">
-        <label>Description:</label>
-        <input type="text" class="form-control" v-model="prepTime">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
+              </div>
+            </template>
 
-  </div>
-</template>
-    
+            <template id="events-index-page">
+              <div class="vue-component">
+
+                <div class="container">
+                    <div v-for="event in events">
+                        <h3>{{ event["name"]}}</h3>
+                    </div>
+                </div>
+
+              </div>
+            </template>
+
+            <template id="events-show-page">
+              <div class="vue-component">
+
+                <div class="container">
+                    <h2>{{ event["name"]}}</h2>
+                    <h2>{{ event["location"]}}</h2>
+                    <h2>{{ event["description"]}}</h2>
+                </div>
+
+              </div>
+            </template>
+
+            <template id="events-new-page">
+              <div class="vue-component">
+
+                <div class="container">
+                  <h1>New Event</h1>
+                  <!-- <ul>
+                    <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                  </ul> -->
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="name">
+                  </div>
+                  <div class="form-group">
+                    <label>Location:</label>
+                    <input type="text" class="form-control" v-model="start_time">
+                  </div>
+                  <div class="form-group">
+                    <label>Description:</label>
+                    <input type="text" class="form-control" v-model="description">
+                  </div>
+                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                </div>
+
+              </div>
+            </template>
+
+            <template id="locations-index-page">
+                <div class="vue-component">
+
+                    <div class="container">
+                        <div v-for="location in locations">
+                            <h3>{{ location["name"] }}</h3>
+                        </div> 
+                    </div>
+                </div>
+            </template>
+                
+
+            <template id="locations-show-page">
+              <div class="vue-component">
+
+                <div class="container">
+                    <h2>{{ location["name"] }}</h2>
+                    <h2>{{ location["longitude"] }}</h2>
+                    <h2>{{ location["latitude"] }}</h2>
+                </div>
+
+              </div>
+            </template>
+
+            <template id="locations-new-page">
+              <div class="vue-component">
+
+                <div class="container">
+                  <h1>New Location</h1>
+
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="name">
+                  </div>
+                  <div class="form-group">
+                    <label>Longitude:</label>
+                    <input type="text" class="form-control" v-model="longitude">
+                  </div>
+                  <div class="form-group">
+                    <label>Latitude:</label>
+                    <input type="text" class="form-control" v-model="latitude">
+                  </div>
+                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                </div>
+
+              </div>
+            </template>
+
+            <template id="users-show-page">
+              <div class="vue-component">
+
+                <div class="container">
+                    <div v-for="user in users">
+                        <h2>{{ user["name"] }}</h2>
+                    </div>
+                </div>
+
+              </div>
+            </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
