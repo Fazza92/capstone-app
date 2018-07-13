@@ -1,17 +1,5 @@
 /* global Vue, VueRouter, axios */
 
-// var HomePage = {
-//   template: "#home-page",
-//   data: function() {
-//     return {
-//       message: "Welcome to Vue.js!"
-//     };
-//   },
-//   created: function() {},
-//   methods: {},
-//   computed: {}
-// };
-
 var SignupPage = {
   template: "#signup-page",
   data: function() {
@@ -163,7 +151,7 @@ var MeetupShowPage = {
 };
 
 var MeetupEditPage = {
-  template: "#meetups-show-page",
+  template: "#meetups-edit-page",
   data: function() {
     return {
           meetup: {
@@ -171,7 +159,8 @@ var MeetupEditPage = {
                     name: "",
                     start_time: "",
                     end_time: "",
-                    description: ""
+                    description: "",
+                    event_id: 0
           }
 
     };
@@ -183,7 +172,23 @@ var MeetupEditPage = {
       this.meetup = response.data;
     }.bind(this));
   },
-  methods: {},
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.meetup.name,
+        start_time: this.meetup.start_time,
+        end_time: this.meetup.end_time,
+        description: this.meetup.description,
+        event_id: this.meetup.event_id
+      };
+      
+      axios
+      .patch("/api/meetups/" + this.$route.params.id, params)
+      .then(function(response) {
+        router.push("/");
+      })
+    }
+  },
   computed: {}
 };
 
@@ -256,6 +261,44 @@ var EventShowPage = {
     }.bind(this));
   },
   methods: {},
+  computed: {}
+};
+
+var EventEditPage = {
+  template: "#events-edit-page",
+  data: function() {
+    return {
+          event: {
+                    id: "",
+                    name: "",
+                    location: "",
+                    description: ""
+          }
+
+    };
+  },
+  created: function() {
+    axios
+    .get("/api/events/" + this.$route.params.id)
+    .then(function(response) {
+      this.event = response.data;
+    }.bind(this));
+  },
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.event.name,
+        location: this.event.location,
+        description: this.event.description,
+      };
+      
+      axios
+      .patch("/api/events/" + this.$route.params.id, params)
+      .then(function(response) {
+        router.push("/api/events/:id");
+      })
+    }
+  },
   computed: {}
 };
 
@@ -372,15 +415,10 @@ var router = new VueRouter({
             { path: "/events/", component: EventIndexPage },
             { path: "/events/new", component: EventNewPage },
             { path: "/events/:id", component: EventShowPage },
+            { path: "/events/:id/edit", component: EventEditPage },
             { path: "/locations", component: LocationIndexPage },
             { path: "/locations/new", component: LocationNewPage },
             { path: "/locations/:id", component: LocationShowPage }
-            
-
-
-
-
-            
 
 
            ],

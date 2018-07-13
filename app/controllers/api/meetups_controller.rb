@@ -21,6 +21,7 @@ class Api::MeetupsController < ApplicationController
 
                           )
     @meetup.save
+    
     render 'show.json.jbuilder'
   end
 
@@ -36,6 +37,9 @@ class Api::MeetupsController < ApplicationController
       if @meetup.save
         render 'show.json.jbuilder'
       else
+        puts "***********************************"
+        p @meetup.errors.full_messages
+        puts "***********************************"
         render json: {errors: @meetup.errors.full_messages }, status: :unprocessable_entity
       end
     end

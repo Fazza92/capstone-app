@@ -49,10 +49,10 @@
                             </li>
                             <!--mega menu-->
                             <li class="dropdown dropdown-fw nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">More  <i class="fa fa-angle-down"></i></a>
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Star Map  <i class="fa fa-angle-down"></i></a>
                             </li> 
                             <li class=" dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Shop</a>
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -89,24 +89,7 @@
                         </div>
                     </div>
                  
-                    <div class="swiper-slide">
-                        <img src="assets/img/bg-3.jpg" alt="" class="img-fluid">
-                        <div class="swiper-overlay">
-                            <div class="container text-center">
-                                <div class="row">
-                                    <div class="col-lg-8 slider-text col-md-10 col-12 mr-auto ml-auto">
-                                        <h4 class="swiper-title">
-                                            Easy customization theme
-                                        </h4>
-                                        <p>
-                                            Bizwrap theme built with modern and easy to use frameworks
-                                        </p>
-                                        <a href="#!" class="btn btn-white btn-lg">Purchase Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
                 <!-- Add Arrows -->
 
@@ -152,6 +135,20 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-4 col-sm-6 margin-btm-40">
+                    <div class="card text-center" style="width: 20rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Meetup example</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="/meetups/:id" class="btn btn-primary">More detail</a>
+                      </div>
+                    </div>
+
+
+                </div>
+
+
 
             </div><!--row portfolio item-->
         
@@ -211,19 +208,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 margin-btm-20">
-                        <div class="footer-col">
-                            <h3>Bizwrap</h3>
-                            <p>
-                                aliqua.adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. aliqua.adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
-                            </p>
-                        </div>
+                        
                         <div class="space-20"></div>
-                        <div class="footer-col">
-                            <h3>contact info</h3>
-                            <p><i class="ion-home"></i> pearl tower,3rd floor,jaipur,302012</p>
-                            <p><i class="ion-iphone"></i> +91 9887568614</p>
-                            <p><i class="ion-email"></i> mail@domain.com</p>
-                        </div>
+                        
                         <div class="space-20"></div>
                         <div class="footer-col">
                             <h3>Follow me</h3>
@@ -234,42 +221,8 @@
                             </ul>
                         </div><!--footer social col-->
                     </div><!--col-4 end-->
-                    <div class="col-md-3 margin-btm-20">
-                        <div class="footer-col">
-                            <h3>Latest post</h3>
-                            <ul class="post-list list-unstyled">
-                                <li><a href="#" class="hover-color">Blog post with image</a></li>
-                                <li><a href="#" class="hover-color">lorem ipsum dollor sit amet</a></li>
-                                <li><a href="#" class="hover-color">Blog post with audio</a></li>
-                                <li><a href="#" class="hover-color">lorem ipsum dollor sit amet</a></li>
-                                <li><a href="#" class="hover-color">Blog post with quote</a></li>
-                            </ul>
-                        </div>
-                    </div><!--latest post col end-->
-                    <div class="col-md-5">
-                        <div class="footer-col">
-                            <h3>Get in touch</h3>
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Name...">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="email" class="form-control" placeholder="Email...">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" placeholder="Subject...">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <textarea class="form-control" placeholder="Massage..." rows="7"></textarea>
-                                    </div>
-                                    <div class="col-md-12 text-right">
-                                        <button type="submit" class="btn btn-lg btn-white">Send massege</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!--get in touch col end-->
+                    <!--latest post col end-->
+                    <!--get in touch col end-->
                 </div><!--footer main row end-->  
                 <div class="space-70"></div>
                 <div class="row">
@@ -378,9 +331,6 @@
 
                 <div class="container">
                   <h1>New Meetup</h1>
-                  <!-- <ul>
-                    <li class="text-danger" v-for="error in errors">{{ error }}</li>
-                  </ul> -->
                   <div class="form-group">
                     <label>Name:</label> 
                     <input type="text" class="form-control" v-model="name">
@@ -405,16 +355,30 @@
 
             <template id="meetups-edit-page">
               <div class="vue-component">
-
                 <div class="container">
-                    <h3 v-bind:="/client/meetups/ @event['id']/edit"></h3>
-                    <button v-on="click: editMeetup(this)">
-                         Edit
-                    </button>
-                    <!-- <input v-on:keyup.delete="submit">
-                    <a v-bind:href="/client/meetups/{{meetup['id']/delete}}">Delete</a> -->
+                  <h1>New Meetup</h1>
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="meetup.name" value="meetup.name">
+                  </div>
+                  <div class="form-group">
+                    <label>Start Time:</label>
+                    <input type="text" class="form-control" v-model="meetup.start_time" value="meetup.start_time">
+                  </div>
+                  <div class="form-group">
+                    <label>End Time:</label>
+                    <input type="text" class="form-control" v-model="meetup.end_time" value="meetup.end_time">
+                  </div>
+                  <div class="form-group">
+                    <label>Description:</label>
+                    <input type="text" class="form-control" v-model="meetup.description" value="meetup.description">
+                  </div>
+                    <div class="container"> 
+                        <button v-on:click="submit()">
+                             Edit
+                        </button>
+                    </div>
                 </div>
-
               </div>
             </template>
 
@@ -465,6 +429,31 @@
                   <button class="btn btn-primary" v-on:click="submit()">Submit</button>
                 </div>
 
+              </div>
+            </template>
+
+            <template id="events-edit-page">
+              <div class="vue-component">
+                <div class="container">
+                  <h1>Update Event</h1>
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="event.name" value="event.name">
+                  </div>
+                  <div class="form-group">
+                    <label>Location:</label>
+                    <input type="text" class="form-control" v-model="event.location" value="event.location">
+                  </div>
+                  <div class="form-group">
+                    <label>Description:</label>
+                    <input type="text" class="form-control" v-model="event.description" value="event.description">
+                  </div>
+                    <div class="container"> 
+                        <button v-on:click="submit()">
+                             Edit
+                        </button>
+                    </div>
+                </div>
               </div>
             </template>
 
