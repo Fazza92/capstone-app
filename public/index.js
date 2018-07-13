@@ -185,7 +185,7 @@ var MeetupEditPage = {
       axios
       .patch("/api/meetups/" + this.$route.params.id, params)
       .then(function(response) {
-        router.push("/");
+        router.push("/api/meetups");
       })
     }
   },
@@ -295,7 +295,7 @@ var EventEditPage = {
       axios
       .patch("/api/events/" + this.$route.params.id, params)
       .then(function(response) {
-        router.push("/api/events/:id");
+        router.push("/api/events/");
       })
     }
   },
@@ -376,8 +376,46 @@ var LocationShowPage = {
   computed: {}
 };
 
+var LocationEditPage = {
+  template: "#locations-edit-page",
+  data: function() {
+    return {
+          location: {
+                    id: "",
+                    name: "",
+                    longitude: "",
+                    latitude: ""
+          }
+
+    };
+  },
+  created: function() {
+    axios
+    .get("/api/locations/" + this.$route.params.id)
+    .then(function(response) {
+      this.location = response.data;
+    }.bind(this));
+  },
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.location.name,
+        longitude: this.location.longitude,
+        latitude: this.location.latitude
+      };
+      
+      axios
+      .patch("/api/locations/" + this.$route.params.id, params)
+      .then(function(response) {
+        router.push("/locations/");
+      })
+    }
+  },
+  computed: {}
+};
+
 var UserShowPage = {
-  template: "#locations-show-page",
+  template: "#users-show-page",
   data: function() {
     return {
           location: {
@@ -418,7 +456,9 @@ var router = new VueRouter({
             { path: "/events/:id/edit", component: EventEditPage },
             { path: "/locations", component: LocationIndexPage },
             { path: "/locations/new", component: LocationNewPage },
-            { path: "/locations/:id", component: LocationShowPage }
+            { path: "/locations/:id", component: LocationShowPage },
+            { path: "/locations/:id/edit", component: LocationEditPage }
+
 
 
            ],

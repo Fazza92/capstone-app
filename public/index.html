@@ -45,11 +45,11 @@
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Calender</a>
                             </li>
                             <li class=" dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Meetups</a>
+                                <a href="/#/meetups/" class="dropdown-toggle nav-link" data-toggle="dropdown">Meetups</a>
                             </li>
                             <!--mega menu-->
                             <li class="dropdown dropdown-fw nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Star Map  <i class="fa fa-angle-down"></i></a>
+                                <a href="star-map.html" class="dropdown-toggle nav-link" data-toggle="dropdown">Star Map  <i class="fa fa-angle-down"></i></a>
                             </li> 
                             <li class=" dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Contact</a>
@@ -121,22 +121,7 @@
 
 
             <div class="row">
-                <div class="col-md-4 col-sm-6 margin-btm-40">
-                    <div class="portfolio-sec">
-                        <div class="portfolio-thumnail">
-                            <a href="portfolio-single.html">
-                                <img src="assets/img/work/work-1.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="portfolio-desc text-center">
-                            <h4 class="portfolio-post-title">portfolio item title here</h4>
-                            <span class="portfolio-post-cat">Branding</span>
-                            <h4><a href="portfolio-single.html" class="btn theme-btn-default btn-lg">More detail</a></h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 margin-btm-40">
+                <div class="col-md-4 col-sm-4 margin-btm-40">
                     <div class="card text-center" style="width: 20rem;">
                       <div class="card-body">
                         <h5 class="card-title">Meetup example</h5>
@@ -144,10 +129,17 @@
                         <a href="/meetups/:id" class="btn btn-primary">More detail</a>
                       </div>
                     </div>
-
-
                 </div>
 
+                <div class="col-md-4 col-sm-4 margin-btm-40">
+                    <div class="card text-center" style="width: 20rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Meetup example</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="/meetups/:id" class="btn btn-primary">More detail</a>
+                      </div>
+                    </div>
+                </div>
 
 
             </div><!--row portfolio item-->
@@ -306,7 +298,10 @@
 
                 <div class="container">
                     <div v-for="meetup in meetups">
-                        <h3>{{ meetup["name"]}}</h3>
+                        <h4>{{ meetup["name"]}}</h4>
+                        <h4>{{ meetup["start_time"]}}</h4>
+                        <h4>{{ meetup["end_time"]}}</h4>
+                        <h4>{{ meetup["description"]}}</h4>
                     </div>
                 </div>
 
@@ -388,6 +383,8 @@
                 <div class="container">
                     <div v-for="event in events">
                         <h3>{{ event["name"]}}</h3>
+                        <h2>{{ event["location"]}}</h2>
+                        <h2>{{ event["description"]}}</h2>
                     </div>
                 </div>
 
@@ -463,6 +460,8 @@
                     <div class="container">
                         <div v-for="location in locations">
                             <h3>{{ location["name"] }}</h3>
+                            <h2>{{ location["longitude"] }}</h2>
+                            <h2>{{ location["latitude"] }}</h2>
                         </div> 
                     </div>
                 </div>
@@ -505,12 +504,40 @@
               </div>
             </template>
 
+            <template id="locations-edit-page">
+              <div class="vue-component">
+                <div class="container">
+                  <h1>Update Event</h1>
+                  <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" class="form-control" v-model="location.name" value="location.name">
+                  </div>
+                  <div class="form-group">
+                    <label>Longitude:</label>
+                    <input type="text" class="form-control" v-model="location.longitude" value="location.longitude">
+                  </div>
+                  <div class="form-group">
+                    <label>Latitude:</label>
+                    <input type="text" class="form-control" v-model="location.latitude" value="location.latitude">
+                  </div>
+                    <div class="container"> 
+                        <button v-on:click="submit()">
+                             Edit
+                        </button>
+                    </div>
+                </div>
+              </div>
+            </template>
+
             <template id="users-show-page">
               <div class="vue-component">
 
                 <div class="container">
                     <div v-for="user in users">
                         <h2>{{ user["name"] }}</h2>
+                    </div>
+                    <div v-for="meetup in meetups">
+                        <h2>{{ meetup["name"] }}</h2>
                     </div>
                 </div>
 
