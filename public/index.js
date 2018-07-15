@@ -79,7 +79,9 @@ var MeetupIndexPage = {
   template: "#meetups-index-page",
   data: function() {
     return {
-          meetups: []
+          meetups: [],
+          apod: {}
+          
     };
   },
   created: function() {
@@ -87,7 +89,15 @@ var MeetupIndexPage = {
     .get("/api/meetups/")
     .then(function(response) {
       this.meetups = response.data;
+      // axios
+      // .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+      // .then(function(response_2) {
+      //   console.log(response_2)
+      //   this.apod = response_2.body
+      //   console.log(body)
+      // }.bind(this));
     }.bind(this));
+    
   },
   methods: {},
   computed: {}
@@ -97,10 +107,12 @@ var MeetupNewPage = {
   template: "#meetups-new-page",
   data: function() {
     return {
+      id: 0,
       name: "",
       start_time: "",
       end_time: "",
-      description: ""
+      description: "",
+      event_id: 0
     };
   },
   methods: {
@@ -114,7 +126,7 @@ var MeetupNewPage = {
       axios
         .post("/api/meetups", params)
         .then(function(response) {
-          router.push("/#/");
+          router.push("/#/meetups");
         })
         .catch(
           function(error) {
@@ -155,7 +167,7 @@ var MeetupEditPage = {
   data: function() {
     return {
           meetup: {
-                    id: "",
+                    id: 0,
                     name: "",
                     start_time: "",
                     end_time: "",
@@ -185,7 +197,7 @@ var MeetupEditPage = {
       axios
       .patch("/api/meetups/" + this.$route.params.id, params)
       .then(function(response) {
-        router.push("/api/meetups");
+        router.push("/#/meetups");
       })
     }
   },
@@ -295,7 +307,7 @@ var EventEditPage = {
       axios
       .patch("/api/events/" + this.$route.params.id, params)
       .then(function(response) {
-        router.push("/api/events/");
+        router.push("/#/events/");
       })
     }
   },
@@ -418,22 +430,18 @@ var UserShowPage = {
   template: "#users-show-page",
   data: function() {
     return {
-          location: {
+          user: {
                     id: "",
-                    name: "",
-                    longitude: "",
-                    latitude: ""
+                    name: ""
           }
 
     };
   },
   created: function() {
     axios
-    .get("/api/locations/" + this.$route.params.id)
+    .get("/api/users/" + this.$route.params.id)
     .then(function(response) {
-      console.log(response);
-      this.location = response.data;
-      console.log("location", this.location);
+      this.user = response.data;
     }.bind(this));
   },
   methods: {},
@@ -457,9 +465,8 @@ var router = new VueRouter({
             { path: "/locations", component: LocationIndexPage },
             { path: "/locations/new", component: LocationNewPage },
             { path: "/locations/:id", component: LocationShowPage },
-            { path: "/locations/:id/edit", component: LocationEditPage }
-
-
+            { path: "/locations/:id/edit", component: LocationEditPage },
+            { path: "/users/:id", component: UserShowPage }
 
            ],
   scrollBehavior: function(to, from, savedPosition) {

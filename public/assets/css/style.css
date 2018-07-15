@@ -20,7 +20,7 @@ body {
   -webkit-text-size-adjust: 100%;
   cursor: default;
   font-size: 14px;
-  line-height: 26px;
+  line-height: 12px;
   font-weight: 400;
   color: #777;
   height: 100%; }
@@ -85,7 +85,7 @@ label {
   background-color: #32d2ba; }
 
 p, blockquote {
-  line-height: 23px; }
+  line-height: 20px; }
 
 blockquote {
   font-style: italic; }
@@ -110,6 +110,10 @@ iframe, fieldset {
 
 .overflow-hidden {
   overflow-x: hidden; }
+
+.index-card {
+  padding: 20px;
+}
 
 /*==================== ========*/
 /*========= Forms =========*/
@@ -772,7 +776,7 @@ MULTI LEVEL DROPDOWN CSS
   .slider-testimonials p {
     color: #fff;
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 50px;
     line-height: 1.8;
     font-weight: 300; }
   .slider-testimonials h6 {
@@ -937,7 +941,7 @@ Accordoins card style
       color: #666; }
 
 .footer-col h3 {
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
@@ -968,10 +972,11 @@ Accordoins card style
 
 .footer-col .social-btn li a i {
   color: #fff;
-  border: 2px solid #fff; }
-  .footer-col .social-btn li a i:hover {
+  border: 3px solid #fff; }
+  .footer-col .social-btn li a i {
     background-color: #32d2ba;
     border-color: #32d2ba; }
+
 
 .post-list li a {
   color: #b3b3b3;
@@ -2174,8 +2179,8 @@ label.error {
 .social-btn li a {
   display: block; }
   .social-btn li a i {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     line-height: 35px;
     text-align: center;
     -webkit-border-radius: 50%;

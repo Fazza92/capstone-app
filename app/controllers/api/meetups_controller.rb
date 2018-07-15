@@ -13,7 +13,6 @@ class Api::MeetupsController < ApplicationController
 
   def create
     @meetup = Meetup.new(
-                            meetup_id: params[:meetup_id],
                             name: params[:name],
                             start_time: params[:start_time],
                             end_time: params[:end_time],
