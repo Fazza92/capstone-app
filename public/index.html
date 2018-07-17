@@ -12,6 +12,7 @@
     <script src="index.js" defer></script>
     <link href="assets/css/plugins/plugins.css" rel="stylesheet">
     <!--Custom css-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -39,21 +40,21 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="active dropdown nav-item">
-                                <a href="#" class="dropdown nav-link">Home</a> 
+                                <a href="/#/" class="dropdown nav-link">Home</a> 
                             </li>
                             <li class="dropdown nav-item">
                                 <a href="/#/events" class="dropdown nav-link">Calender</a>
                             </li>
                             <li class=" dropdown nav-item">
-                                <a href="/#/meetups/new" class="dropdown nav-link">Meetups</a> 
+                                <a href="/#/meetups/new" class="dropdown nav-link">New Meetup</a> 
                                 <!-- data-toggle =dropdown -->
                             </li>
                             <!--mega menu-->
-                            <li class="dropdown dropdown-fw nav-item">
-                                <a href="/#/locations" class="dropdown nav-link">Star Map  <i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown-fw nav-item">
+                                <a href="/#/locations" class="dropdown nav-link">Star Map</a>
                             </li> 
                             <li class=" dropdown nav-item">
-                                <a href="contact.html" class="dropdown nav-link" >Contact</a>
+                                <a href="/#/locations/new" class="dropdown nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -94,11 +95,11 @@
                         <div class="space-20"></div>
                         
                         <div class="space-20"></div>
-                        <div class="footer-col">
+                        <div class="footer-col center-text">
                             <h3>Follow me</h3>
                             <ul class=" list-inline social-btn">
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-github-square" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow on Github"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="ion-social-medium" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow On Medium"></i></a></li>
+                                <li class="list-inline-item"><a href="https://github.com/Fazza92"><i class="fab fa-github-square" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow on Github"></i></a></li>
+                                <li class="list-inline-item"><a href="https://medium.com/@Fazza92"><i class="fab fa-medium" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow On Medium"></i></a></li>
                                 <li class="list-inline-item"><a href="https://www.linkedin.com/in/oscar-wasilewski-1a8820157/"><i class="ion-social-linkedin" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow On Linkedin"></i></a></li>
                             </ul>
                         </div><!--footer social col-->
@@ -159,6 +160,10 @@
 
             <template id="signup-page">
               <div class="vue-component">
+                <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+
+                    <div class="space-70"></div>
 
                 <div class="container">
                   <h1>Signup</h1>
@@ -183,8 +188,10 @@
                   </div>
                   <button class="btn btn-primary" v-on:click="submit()">Submit</button>
                 </div>
+                    <div class="space-70"></div>
 
               </div>
+
             </template>
 
             <template id="meetups-index-page">
@@ -217,7 +224,7 @@
                     <div class='container'>
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="heading-sec">Popular Meetups</h3>
+                                <h3 class="heading-sec">Meetups</h3>
                             </div>
                         </div><!--row-->
                     
@@ -227,7 +234,7 @@
                                 <div class="card text-center" style="width: 18rem;">
                                   <div class="card-body">
                                     <h5 class="card-title">{{meetup['name']}}</h5>
-                                    <p class="card-text">asdlkjf asdfasf</p>
+                                    <p class="card-text">{{meetup['description']}}</p>
                                     <a :href="'/#/meetups/'+ meetup['id']" class="btn btn-primary">More Details</a>
                                   </div>
                                 </div>
@@ -266,9 +273,10 @@
                           <div class="row">
                               <div class="col-md-8 ml-auto mr-auto">
                                   <h3>NASA Picture of the Day</h3>
+                                  <div id="banner">
                                   <img src="https://apod.nasa.gov/apod/image/1807/M57Ring_HubbleGendler_960.jpg">
                                   <p>Explanation: There is much more to the familiar Ring Nebula (M57), however, than can be seen through a small telescope. The easily visible central ring is about one light-year across, but this remarkably deep exposure - a collaborative effort combining data from three different large telescopes - explores the looping filaments of glowing gas extending much farther from the nebula's central star. This remarkable composite image includes narrowband hydrogen image, visible light emission, and infrared light emission. Of course, in this well-studied example of a planetary nebula, the glowing material does not come from planets. Instead, the gaseous shroud represents outer layers expelled from a dying, sun-like star. The Ring Nebula is about 2,000 light-years away toward the musical constellation Lyra.</p>
-                            
+                                </div>
                               </div>
                           </div><!--row-->
 
@@ -291,21 +299,26 @@
             <template id="meetups-show-page">
               <div class="vue-component">
 
-                <div class="card text-center" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="/#/meetups/:id" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
+                <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
 
-                <div class="container">
-                    <h2>{{ meetup["name"]}}</h2>
-                    <h2>{{ meetup["start_time"]}}</h2>
-                    <h2>{{ meetup["end_time"]}}</h2>
-                    <h2>{{ meetup["description"]}}</h2>
-                </div>
-                    <a href="/#/meetups/{{ @meetup['id'] }}/edit">Edit</a>
+                    <div class="space-70"></div>
+
+                    <div class="card text-center" style="width: 18rem;">
+                      <div class="card-body center-text">
+                        <h5 class="card-title">{{meetup['name']}}</h5>
+                        <p class="card-text">Start Time: {{meetup['start_time']}}</p>
+                        <p class="card-text">End Time: {{meetup['end_time']}}</p>
+                        <p class="card-text">{{meetup['description']}}</p>
+                        <a href="/#/meetups/:id" class="btn btn-primary">Join Meetup</a>
+                      </div>
+                    </div>
+
+                    <button type="button" class="btn btn-dark">
+                        <a v-bind:href="'/#/meetups/' +  meetup['id'] + '/edit'" style="black">Edit</a>
+                    </button>
+                    <div class="space-70"></div>
+
               </div>
 
             </template>
@@ -337,9 +350,26 @@
                       </div>
                       <div class="form-group">
                         <select>
-                              <option>Haley's Comet</option>
+                              <option>Moon at First Quarter</option>
+                              <option>Asteroid 88 Thisbe at opposition</option>
+                              <option>Mercury at aphelion</option>
+                              <option>Conjunction of the Moon and Jupiter</option>
+                              <option>Cygnid meteor shower</option>
+                              <option>Conjunction of Venus and Ceres</option>
+                              <option>Conjunction of the Moon and Saturn</option>
+                              <option>Close approach of the Moon and Saturn</option>
+                              <option>Capricornid meteor shower</option>
+                              <option>The Moon at aphelion</option>
+                              <option>Conjunction of the Moon and Mars</option>
+                              <option>Total lunar eclipse</option>
+                              <option>Aquarid meteor shower</option>
+                              <option>Australid meteor shower</option>
+                              <option>Mars at perigee</option>
+                              <option>Moon at Last Quarter</option>
+                              <option>Full Moon</option>
                           </select>
                       </div>
+
                       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
                     </div>
                     <div class="space-70"></div>
@@ -350,8 +380,14 @@
 
             <template id="meetups-edit-page">
               <div class="vue-component">
+                <div class="vue-component">
+                <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+
+                    <div class="space-70"></div>
+
                 <div class="container">
-                  <h1>New Meetup</h1>
+                  <h1>Edit Meetup</h1>
                   <div class="form-group">
                     <label>Name:</label> 
                     <input type="text" class="form-control" v-model="meetup.name" value="meetup.name">
@@ -369,12 +405,13 @@
                     <input type="text" class="form-control" v-model="meetup.description" value="meetup.description">
                   </div>
                     <div class="container"> 
-                        <button v-on:click="submit()">
-                             Edit
-                        </button>
+                        <button type="button" class="btn btn-primary" v-on:click="submit()">Submit</button>
                     </div>
                 </div>
               </div>
+
+                <div class="space-70"></div>
+
             </template>
 
             <template id="events-index-page">
@@ -383,9 +420,10 @@
                   <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
                   <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
                 <div class="space-70"></div>
-
-                <div class="container">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=p2h2a8tjqkjeoheqchof2olbic%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="900" height="700" frameborder="0" scrolling="no"></iframe>
+                <div class="banner">
+                    <div class="container">
+                        <iframe src="https://calendar.google.com/calendar/embed?src=p2h2a8tjqkjeoheqchof2olbic%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="900" height="700" frameborder="0" scrolling="no"></iframe>
+                    </div>
                 </div>
 
                   <div class="space-50"></div>
@@ -464,7 +502,7 @@
                       <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
                     <div class="space-70"></div>
                     <div class="container">
-                        <iframe width="1100" height="700" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://virtualsky.lco.global/embed/?longitude=-119.86286000000001&latitude=34.4326&projection=polar&constellations=true&constellationlabels=true&showstarlabels=true&showplanetlabels=false&az=112.82539237729088" allowTransparency="true"></iframe>
+                        <iframe width="1200" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://virtualsky.lco.global/embed/?longitude=-119.86286000000001&latitude=34.4326&projection=polar&constellations=true&constellationlabels=true&showstarlabels=true&showplanetlabels=false&az=112.82539237729088" allowTransparency="true"></iframe>
                     </div>
                 <div class="space-70"></div>
 
@@ -486,23 +524,71 @@
 
             <template id="locations-new-page">
               <div class="vue-component">
+                <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
 
+                    <!-- <div class="space-70"></div> -->
+
+                <section id="content-region-3" class="padding-40 page-tree-bg">
+                    <div class="container">
+                        <h3 class="page-tree-text">
+                            get in touch
+                        </h3>
+                    </div>
+                </section><!--page-tree end here-->
+
+                <div class="space-70"></div>
                 <div class="container">
-                  <h1>New Location</h1>
+                    <div class="row">
 
-                  <div class="form-group">
-                    <label>Name:</label> 
-                    <input type="text" class="form-control" v-model="name">
-                  </div>
-                  <div class="form-group">
-                    <label>Longitude:</label>
-                    <input type="text" class="form-control" v-model="longitude">
-                  </div>
-                  <div class="form-group">
-                    <label>Latitude:</label>
-                    <input type="text" class="form-control" v-model="latitude">
-                  </div>
-                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                        <div class="col-md-6 ml-auto">
+                            <h4 class="heading-mini">Contact us</h4>
+                            <div class="my-contact-form">
+                                <form name="sentMessage" id="contactForm" method="post" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row control-group">
+                                                <div class="form-group col-sm-12 controls">
+
+                                                    <input type="text" class="form-control" placeholder="Name*" id="name" required data-validation-required-message="Please enter your name.">
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="row control-group">
+                                                <div class="form-group col-sm-12 controls">                   
+                                                    <input type="email" class="form-control" placeholder="Email Address*" id="email" required data-validation-required-message="Please enter your email address.">
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row control-group">
+                                        <div class="form-group col-sm-12">
+                                            <input type="text" class="form-control" placeholder="Subject" id="phone">
+                                            <p class="help-block"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row control-group">
+                                        <div class="form-group col-sm-12 controls">
+                                            <textarea rows="5" class="form-control" placeholder="Message*" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                            <p class="help-block"></p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div id="success"></div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-12 text-right" style="margin-top: -15px;">
+                                            <button type="submit" class="btn theme-btn-color btn-lg">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
               </div>
