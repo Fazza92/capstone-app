@@ -22,7 +22,7 @@
         <div class="top-bar navbar">
             <div class="container">
                 <ul class="navbar-nav flex-row nav ml-auto">
-                    <li class="nav-item"><a href="signup.html" class="nav-link">Create an account?</a></li>
+                    <li class="nav-item"><a href="/#/signup" class="nav-link">Create an account?</a></li>
                     <li class="nav-item">
                         <a href="/#/login" class="nav-link"><i class="ion-android-lock mr-2"></i> Login</a></li>
 
@@ -39,24 +39,25 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="active dropdown nav-item">
-                                <a href="/#" class="dropdown nav-link">Home</a> 
+                                <a href="#" class="dropdown nav-link">Home</a> 
                             </li>
                             <li class="dropdown nav-item">
-                                <a href="/" class="dropdown nav-link">Calender</a>
+                                <a href="/#/events" class="dropdown nav-link">Calender</a>
                             </li>
                             <li class=" dropdown nav-item">
-                                <a href="/#/meetups" class="dropdown nav-link">Meetups</a> 
+                                <a href="/#/meetups/new" class="dropdown nav-link">Meetups</a> 
                                 <!-- data-toggle =dropdown -->
                             </li>
                             <!--mega menu-->
                             <li class="dropdown dropdown-fw nav-item">
-                                <a href="star-map.html" class="dropdown nav-link">Star Map  <i class="fa fa-angle-down"></i></a>
+                                <a href="/#/locations" class="dropdown nav-link">Star Map  <i class="fa fa-angle-down"></i></a>
                             </li> 
                             <li class=" dropdown nav-item">
                                 <a href="contact.html" class="dropdown nav-link" >Contact</a>
                             </li>
                         </ul>
                     </div>
+                    
                     <div class="right-search ml-4 dropdown">
 
                         <div class="dropdown-menu dropdown-menu-right">
@@ -72,21 +73,6 @@
             </nav><!--nav end-->
         </header>
         <!--main flex slider end-->
-        <div class="space-50"></div>
-        <div class="container">
-            <!--row end-->
-            <div class="space-30"></div>
-            <div class="text-center">
-            </div>
-        </div><!--intro with services end-->
-        <div class="space-70"></div><div class="space-30"></div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="heading-sec">Popular Meetups</h3>
-                </div>
-            </div><!--row-->
 
     <!-- YIELD -->
             <div id="vue-app">
@@ -95,66 +81,7 @@
 
     <!-- YIELD END -->
 
-
-<!--row portfolio item-->
         
-
-
-        </div><!--recent work container end-->
-        
-
-
-
-
-
-
-        <div class="space-70"></div>
-    <!--features end-->
-        <section id="content-region-2" class="slider-testimonials ">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 mr-auto ml-auto text-center">
-                        <i class="ion-quote display-4 margin-btm-40 text-primary"></i>
-                        <div class="swiper-container swiper-text">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <p class="lead">
-                                        Discover the Cosmos 
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> <!--testimonials section end here-->
-
-       
-      <!--container recent news end-->
-      <div class="space-50"></div>
-      <div class="newsletter-section">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-8 ml-auto mr-auto">
-                      <h3>NASA Picture of the Day</h3>
-                      <img src="https://apod.nasa.gov/apod/image/1807/M57Ring_HubbleGendler_960.jpg">
-                      <p>Explanation: There is much more to the familiar Ring Nebula (M57), however, than can be seen through a small telescope. The easily visible central ring is about one light-year across, but this remarkably deep exposure - a collaborative effort combining data from three different large telescopes - explores the looping filaments of glowing gas extending much farther from the nebula's central star. This remarkable composite image includes narrowband hydrogen image, visible light emission, and infrared light emission. Of course, in this well-studied example of a planetary nebula, the glowing material does not come from planets. Instead, the gaseous shroud represents outer layers expelled from a dying, sun-like star. The Ring Nebula is about 2,000 light-years away toward the musical constellation Lyra.</p>
-                
-                  </div>
-              </div><!--row-->
-
-              <div class="row">
-                  <div class="col-md-4 ml-auto mr-auto text-center">
-                      <form method="post" action="#" class="form-subscribe">
-                          
-                        
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
       
         
         <!--footer-->
@@ -205,6 +132,9 @@
 
             <template id="login-page">
               <div class="vue-component">
+                <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-70"></div>
 
                 <div class="container">
                   <h1>Login</h1>
@@ -221,6 +151,7 @@
                   </div>
                   <button class="btn btn-primary" v-on:click="submit()">Submit</button>
                 </div>
+                <div class="space-70"></div>
 
               </div>
             </template>
@@ -275,27 +206,82 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                         
-                          
+                            </div> 
                         </div>
                         <!-- Add Arrows -->
 
                     </div>
-
                 </section>
                 <!-- <div class="container"> -->
-                <div class="row">
-                    <div v-for="meetup in meetups.slice(0,3)">
-                        <div class="card text-center" style="width: 18rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">{{meetup['name']}}</h5>
-                            <p class="card-text">asdlkjf asdfasf</p>
-                            <a href="#" class="btn btn-primary">More detail</a>
-                          </div>
+                <div class="space-70"></div>
+                    <div class='container'>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="heading-sec">Popular Meetups</h3>
+                            </div>
+                        </div><!--row-->
+                    
+
+                        <div class="row">
+                            <div v-for="meetup in meetups">
+                                <div class="card text-center" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{meetup['name']}}</h5>
+                                    <p class="card-text">asdlkjf asdfasf</p>
+                                    <a :href="'/#/meetups/'+ meetup['id']" class="btn btn-primary">More Details</a>
+                                  </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                 </div>
+
+                    <div class="space-70"></div>
+                <!--features end-->
+                    <section id="content-region-2" class="slider-testimonials ">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 mr-auto ml-auto text-center">
+                                    <i class="ion-quote display-4 margin-btm-40 text-primary"></i>
+                                    <div class="swiper-container swiper-text">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <p class="lead">
+                                                    Discover the Cosmos 
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section> <!--testimonials section end here-->
+
+                   
+                  <!--container recent news end-->
+                  <div class="space-50"></div>
+                  <div class="newsletter-section">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-md-8 ml-auto mr-auto">
+                                  <h3>NASA Picture of the Day</h3>
+                                  <img src="https://apod.nasa.gov/apod/image/1807/M57Ring_HubbleGendler_960.jpg">
+                                  <p>Explanation: There is much more to the familiar Ring Nebula (M57), however, than can be seen through a small telescope. The easily visible central ring is about one light-year across, but this remarkably deep exposure - a collaborative effort combining data from three different large telescopes - explores the looping filaments of glowing gas extending much farther from the nebula's central star. This remarkable composite image includes narrowband hydrogen image, visible light emission, and infrared light emission. Of course, in this well-studied example of a planetary nebula, the glowing material does not come from planets. Instead, the gaseous shroud represents outer layers expelled from a dying, sun-like star. The Ring Nebula is about 2,000 light-years away toward the musical constellation Lyra.</p>
+                            
+                              </div>
+                          </div><!--row-->
+
+                          <div class="row">
+                              <div class="col-md-4 ml-auto mr-auto text-center">
+                                  <form method="post" action="#" class="form-subscribe">
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
                 <!-- apod api -->
               <!-- <img v-bind:src="@apod['url']">
               <p>{{ @apod['explanation'] }}</p> -->
@@ -305,40 +291,59 @@
             <template id="meetups-show-page">
               <div class="vue-component">
 
+                <div class="card text-center" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="/#/meetups/:id" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+
                 <div class="container">
                     <h2>{{ meetup["name"]}}</h2>
                     <h2>{{ meetup["start_time"]}}</h2>
                     <h2>{{ meetup["end_time"]}}</h2>
                     <h2>{{ meetup["description"]}}</h2>
                 </div>
-                    <a href="/client/meetups/{{ @meetup['id'] }}/edit">Edit</a>
+                    <a href="/#/meetups/{{ @meetup['id'] }}/edit">Edit</a>
               </div>
 
             </template>
 
             <template id="meetups-new-page">
               <div class="vue-component">
+                <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
 
-                <div class="container">
-                  <h1>New Meetup</h1>
-                  <div class="form-group">
-                    <label>Name:</label> 
-                    <input type="text" class="form-control" v-model="name">
-                  </div>
-                  <div class="form-group">
-                    <label>Start Time:</label>
-                    <input type="text" class="form-control" v-model="start_time">
-                  </div>
-                  <div class="form-group">
-                    <label>End Time:</label>
-                    <input type="text" class="form-control" v-model="end_time">
-                  </div>
-                  <div class="form-group">
-                    <label>Description:</label>
-                    <input type="text" class="form-control" v-model="description">
-                  </div>
-                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-                </div>
+                    <div class="space-70"></div>
+
+                    <div class="container">
+                      <h1>New Meetup</h1>
+                      <div class="form-group">
+                        <label>Name:</label> 
+                        <input type="text" class="form-control" v-model="name">
+                      </div>
+                      <div class="form-group">
+                        <label>Start Time:</label>
+                        <input type="text" class="form-control" v-model="start_time">
+                      </div>
+                      <div class="form-group">
+                        <label>End Time:</label>
+                        <input type="text" class="form-control" v-model="end_time">
+                      </div>
+                      <div class="form-group">
+                        <label>Description:</label>
+                        <input type="text" class="form-control" v-model="description">
+                      </div>
+                      <div class="form-group">
+                        <select>
+                              <option>Haley's Comet</option>
+                          </select>
+                      </div>
+                      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                    </div>
+                    <div class="space-70"></div>
+
 
               </div>
             </template>
@@ -375,13 +380,16 @@
             <template id="events-index-page">
               <div class="vue-component">
 
+                  <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                  <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                <div class="space-70"></div>
+
                 <div class="container">
-                    <div v-for="event in events">
-                        <h3>{{ event["name"]}}</h3>
-                        <h2>{{ event["location"]}}</h2>
-                        <h2>{{ event["description"]}}</h2>
-                    </div>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=p2h2a8tjqkjeoheqchof2olbic%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="900" height="700" frameborder="0" scrolling="no"></iframe>
                 </div>
+
+                  <div class="space-50"></div>
+
 
               </div>
             </template>
@@ -451,14 +459,15 @@
 
             <template id="locations-index-page">
                 <div class="vue-component">
-
+                
+                      <div class="space-30" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                      <div class="space-50" style="background-image: url('https://images.unsplash.com/photo-1502656109408-152680a8ad1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=40e160d54f5831df3d12204916d8edb1&auto=format&fit=crop&w=1650&q=80" alt="" class="img-fluid')"></div>
+                    <div class="space-70"></div>
                     <div class="container">
-                        <div v-for="location in locations">
-                            <h3>{{ location["name"] }}</h3>
-                            <h2>{{ location["longitude"] }}</h2>
-                            <h2>{{ location["latitude"] }}</h2>
-                        </div> 
+                        <iframe width="1100" height="700" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://virtualsky.lco.global/embed/?longitude=-119.86286000000001&latitude=34.4326&projection=polar&constellations=true&constellationlabels=true&showstarlabels=true&showplanetlabels=false&az=112.82539237729088" allowTransparency="true"></iframe>
                     </div>
+                <div class="space-70"></div>
+
                 </div>
             </template>
                 

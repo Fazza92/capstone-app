@@ -1,5 +1,6 @@
 /* global Vue, VueRouter, axios */
 
+
 var SignupPage = {
   template: "#signup-page",
   data: function() {
@@ -107,12 +108,12 @@ var MeetupNewPage = {
   template: "#meetups-new-page",
   data: function() {
     return {
-      id: 0,
       name: "",
       start_time: "",
       end_time: "",
       description: "",
-      event_id: 0
+      event_id: "",
+      errors: []
     };
   },
   methods: {
@@ -122,11 +123,12 @@ var MeetupNewPage = {
         start_time: this.start_time,
         end_time: this.end_time,
         description: this.description,
+        event_id: this.event_id
       };
       axios
         .post("/api/meetups", params)
         .then(function(response) {
-          router.push("/#/meetups");
+          router.push("/meetups");
         })
         .catch(
           function(error) {

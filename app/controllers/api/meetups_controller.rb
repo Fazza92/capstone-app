@@ -16,8 +16,8 @@ class Api::MeetupsController < ApplicationController
                             name: params[:name],
                             start_time: params[:start_time],
                             end_time: params[:end_time],
-                            description: params[:description]
-
+                            description: params[:description],
+                            integer: '1'
                           )
     @meetup.save
     
@@ -32,6 +32,7 @@ class Api::MeetupsController < ApplicationController
       @meetup.start_time = params[:start_time] || @meetup.start_time
       @meetup.end_time = params[:end_time] || @meetup.end_time
       @meetup.description = params[:description] || @meetup.description
+      @meetup.integer = @meetup.integer
       
       if @meetup.save
         render 'show.json.jbuilder'
