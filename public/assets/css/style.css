@@ -25,6 +25,12 @@ body {
   color: #777;
   height: 100%; }
 
+  .card {
+          margin: 0 auto; /* Added */
+          float: none; /* Added */
+          margin-bottom: 10px; /* Added */
+  }
+
   banner {
       height: 100px;
       width: 960px;
@@ -947,11 +953,11 @@ Accordoins card style
       border: 1px solid #ddd;
       color: #333; }
     #footer.shop-footer .footer-col .social-btn li a i {
-      color: #333;
-      border-color: #333; }
+      color: black;
+      border-color: black; }
       #footer.shop-footer .footer-col .social-btn li a i:hover {
-        border-color: #32d2ba;
-        color: #fff; }
+        border-color: black;
+        color: black; }
     #footer.shop-footer .footer-col .post-list li a {
       border-color: #ddd;
       color: #666; }
@@ -990,8 +996,8 @@ Accordoins card style
   color: #fff;
   border: 3px solid #fff; }
   .footer-col .social-btn li a i {
-    background-color: #32d2ba;
-    border-color: #32d2ba; }
+    background-color: black;
+    border-color: black; }
 
 
 .post-list li a {
