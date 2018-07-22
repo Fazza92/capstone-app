@@ -232,8 +232,8 @@
                         <div class="row">
                             <div v-for="meetup in meetups">
                                 <div class="card text-center" style="width: 18rem;">
-                                  <div class="card-body">
-                                    <h5 class="card-title">{{meetup['name']}}</h5>
+                                  <div class="card-body custom-card-body">
+                                    <h5 class="card-title custom-card-title">{{meetup['name']}}</h5>
                                     <p class="card-text">{{meetup['description']}}</p>
                                     <a :href="'/#/meetups/'+ meetup['id']" class="btn btn-primary">More Details</a>
                                   </div>
@@ -314,7 +314,7 @@
                       </div>
                     </div>
 
-                    <button type="button" class="btn btn-dark">
+                    <button type="button" class="btn">
                         <a v-bind:href="'/#/meetups/' +  meetup['id'] + '/edit'" style="black">Edit</a>
                     </button>
                     <div class="space-70"></div>
@@ -542,24 +542,26 @@
                 <div class="space-70"></div>
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-1 ml-auto"></div>
+                        <div class="col-md-10 ml-auto">
+                            <div class="row control-group">
+                                <div class="form-group col-sm-10">
+                                    <h4 class="heading-mini">Contact us</h4>
+                                </div>
+                            </div>
 
-                        <div class="col-md-6 ml-auto">
-                            <h4 class="heading-mini">Contact us</h4>
                             <div class="my-contact-form">
                                 <form name="sentMessage" id="contactForm" method="post" novalidate>
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                    <div>
+                                        <div>
                                             <div class="row control-group">
                                                 <div class="form-group col-sm-12 controls">
-
                                                     <input type="text" class="form-control" placeholder="Name*" id="name" required data-validation-required-message="Please enter your name.">
                                                     <p class="help-block"></p>
                                                 </div>
                                             </div>
-
                                         </div>
-
-                                        <div class="col-md-6">
+                                        <div>
                                             <div class="row control-group">
                                                 <div class="form-group col-sm-12 controls">                   
                                                     <input type="email" class="form-control" placeholder="Email Address*" id="email" required data-validation-required-message="Please enter your email address.">
@@ -588,6 +590,7 @@
                                         </div>
                                     </div>
                                 </form>
+                                <div class="col-md-1 ml-auto"></div>
                             </div>
                         </div>
                     </div>

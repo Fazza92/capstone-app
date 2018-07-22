@@ -25,6 +25,14 @@ body {
   color: #777;
   height: 100%; }
 
+  .custom-card-body {
+    height: 150px;
+  }
+
+  .custom-card-title {
+    height: 80px;
+  }
+
   .card {
           margin: 0 auto; /* Added */
           float: none; /* Added */
@@ -395,7 +403,9 @@ h4.heading-mini {
   text-transform: capitalize;
   font-size: 18px;
   color: #000;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  text-align: center;
+   }
 
 h3.heading-sec {
   font-weight: 600;
